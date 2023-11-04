@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './ItemCard.module.scss';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 import ItemPopup from '../itemPopup/ItemPopup';
@@ -13,14 +13,21 @@ const ItemCard: React.FC<ItemCardProps> = ({ item }) => {
 
 	const [isPopup, setIsPopup] = useState(false);
 
-	const cardClick = () => {
+	const openPopup = () => {
 		setIsPopup(true);
+		document.body.style.overflow = "hidden";
 	}
+
+	useEffect(() => {
+		if (isPopup === false) {
+			document.body.style.overflow = "unset";
+		}
+	}, [isPopup])
 
 	return (
 		<>
 			{/* Item card with scroll animation */}
-			<div className={`${styles.itemCardContainer} ${isItemVisible ? styles.itemCardAnimation : ''}`} ref={itemRef} onClick={cardClick}>
+			<div className={`${styles.itemCardContainer} ${isItemVisible ? styles.itemCardAnimation : ''}`} ref={itemRef} onClick={openPopup}>
 
 				<div className={styles.imageBox}>
 					<img src={item.img} alt="Item Image" loading="lazy" />
