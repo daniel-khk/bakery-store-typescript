@@ -1,0 +1,59 @@
+@use '../../abstracts/scss/' as *;
+
+.navbarWeb {
+	position: relative;
+	max-width: $max-width-main;
+	padding: 1rem $side-padding-m;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	flex-direction: column;
+	margin: 0 auto;
+	z-index: 98;
+}
+
+.navbarMenu {
+	ul {
+		display: flex;
+		gap: 1.25em;
+	}
+
+	li {
+		font-family: $font-pop;
+		font-size: $font-size-s;
+		font-weight: 500;
+		padding: 0.25em 0.25em;
+		color: $color-text-contrast;
+		text-transform: capitalize;
+		cursor: pointer;
+		transition: 0.5s ease;
+
+		&:hover {
+			color: $color-primary-shade;
+		}
+
+		&.active {
+			color: $color-primary-shade;
+		}
+	}
+}
+
+.navLogo {
+	width: 100%;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin: 1rem 0 0;
+}
+
+.mainLogo {
+	filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5));
+	height: 6.25rem;
+}
+
+
+@media screen and (max-width : 1023px) {
+	.navbarWeb {
+		display: none;
+	}
+}

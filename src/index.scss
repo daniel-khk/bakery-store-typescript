@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {}
+
+* {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	font-family: 'Montserrat', 'Helvetica Neue', 'Arial', sans-serif;
+	color: #222222;
+	font-weight: 400;
+	background-color: #ffffff;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+
+	margin: 0;
+	padding: 0;
+	min-width: 20rem;
+}

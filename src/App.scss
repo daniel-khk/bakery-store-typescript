@@ -1,0 +1,14 @@
+@use './abstracts/scss/' as *;
+
+.main-container {
+	max-width: $max-width-main;
+	min-width: $min-width-main;
+	margin: 0 auto;
+	padding: 0 $side-padding-m;
+}
+
+@media screen and (max-width : 767px) {
+	.main-container {
+		padding: 0 $side-padding-s;
+	}
+}

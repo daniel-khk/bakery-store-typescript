@@ -1,0 +1,144 @@
+@use '../../abstracts/scss/' as *;
+
+.navbarMobile {
+	position: fixed;
+	width: 100%;
+	min-width: $min-width-main;
+	z-index: 98;
+}
+
+.mobileMenu {
+	position: relative;
+	height: $navbar-height-mobile;
+	padding: 1rem $side-padding-m;
+	background-color: $color-primary;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 auto;
+	z-index: inherit;
+}
+
+.slideMenu {
+	position: fixed;
+	top: -100vh;
+	right: 0;
+	height: 100vh;
+	width: 100%;
+	background-color: $color-primary;
+	padding: 2.5rem 2rem;
+	transition: 0.4s ease-in-out;
+	z-index: 97;
+	overflow-y: auto;
+
+	&.slide {
+		top: 0;
+	}
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-end;
+		margin-top: $navbar-height-mobile;
+		gap: 1.5em;
+	}
+
+	li {
+		font-family: $font-pop;
+		font-size: $font-size-2xl;
+		font-weight: 600;
+		padding: 0.25em 0.25em;
+		color: $color-text-contrast;
+		text-transform: capitalize;
+		cursor: pointer;
+		transition: 0.5s ease;
+
+		&:hover {
+			color: $color-primary-shade;
+		}
+
+		&.active {
+			color: $color-primary-shade;
+		}
+	}
+}
+
+.navLogo {
+	margin: 1.8rem 0 0;
+}
+
+.mainLogo {
+	filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
+	height: 3.75rem;
+}
+
+.slideMenuIcon {
+	cursor: pointer;
+	padding: 0.25rem;
+}
+
+
+@media screen and (min-width : 1024px) {
+	.navbarMobile {
+		display: none;
+	}
+}
+
+@media screen and (max-width : 1023px) {
+	.navbarMobile {
+		display: initial;
+	}
+}
+
+@media screen and (max-width : 767px) {
+	.mobileMenu {
+		height: $navbar-height-mobile-s;
+		padding: 1rem $side-padding-s;
+	}
+
+	.slideMenu {
+		padding: 2rem 1.5rem;
+
+		ul {
+			gap: 1.25rem;
+		}
+
+		li {
+			font-size: $font-size-xl;
+		}
+	}
+
+	.navLogo {
+		margin: 1.5rem 0 0;
+	}
+
+	.mainLogo {
+		height: 3.125rem;
+	}
+}
+
+@media screen and (max-width : 575px) {
+	.slideMenu {
+		padding: 1.5rem 1.5rem;
+
+		ul {
+			gap: 1rem;
+		}
+	}
+
+	.navLogo {
+		margin: 0;
+	}
+
+	.mainLogo {
+		height: 1.875rem;
+		filter: none;
+	}
+}
+
+@media screen and (max-width : 380px) {
+	.mainLogo {
+		height: 1.75rem;
+	}
+}

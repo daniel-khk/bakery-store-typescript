@@ -1,0 +1,19 @@
+@use '../../abstracts/scss/' as *;
+
+.cardContainer {
+	opacity: 0;
+}
+
+.cardAnimationDelay {
+	animation: card-animation-delay 2s ease 0.5s forwards;
+}
+
+@keyframes card-animation-delay {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

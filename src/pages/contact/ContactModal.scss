@@ -1,0 +1,97 @@
+@use '../../abstracts/scss/' as *;
+
+.contact-modal {
+	.modal-backdrop {
+		width: 100%;
+	}
+
+	.modal-dialog {
+		max-width: none;
+		padding: $side-padding-s;
+		margin: 0;
+		justify-content: center;
+	}
+
+	.modal-content {
+		width: initial;
+		background-color: $color-bg;
+		padding: 1em 2em;
+	}
+
+	.modal-body {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		padding: 1em;
+
+		p {
+			line-height: 1.6em;
+			margin-bottom: 1.25em;
+		}
+
+		button {
+			width: initial;
+			background-color: $color-primary;
+			color: $color-text-contrast;
+			font-family: $font-pop;
+			padding: 0.5em 1em;
+			font-weight: 600;
+			border: none;
+			transition: 0.4s ease;
+
+			&:hover {
+				background-color: $color-primary-shade;
+			}
+		}
+	}
+}
+
+
+@media screen and (max-width : 575px) {
+	.contact-modal {
+		.modal-content {
+			font-size: $font-size-s;
+			padding: 0.75em 1.5em;
+		}
+
+		.modal-body {
+			button {
+				font-size: $font-size-s;
+			}
+		}
+	}
+}
+
+@media screen and (max-width : 420px) {
+	.contact-modal {
+		.modal-content {
+			padding: 1em 1em;
+		}
+	}
+}
+
+@media screen and (max-width : 383px) {
+	.contact-modal {
+		.modal-content {
+			font-size: $font-size-s-1;
+		}
+
+		.modal-body {
+			button {
+				font-size: $font-size-s-1;
+			}
+		}
+	}
+}
+
+@media screen and (max-width : 358px) {
+	.contact-modal {
+		.modal-dialog {
+			padding: 0.15rem;
+		}
+
+		.modal-content {
+			padding: 0.5em 0.5em;
+		}
+	}
+}

@@ -1,0 +1,55 @@
+@use '../../abstracts/scss/' as *;
+
+.title {
+	width: 100%;
+	text-align: center;
+	margin: 5rem 0 2.5rem;
+
+	h2 {
+		font-family: $font-pop;
+		text-transform: capitalize;
+		font-size: 2.25rem;
+		font-weight: 700;
+		letter-spacing: -0.01em;
+	}
+}
+
+@media screen and (max-width : 1023px) {
+	.title {
+		margin: 4rem 0 2rem;
+
+		h2 {
+			font-size: 2rem;
+		}
+	}
+}
+
+@media screen and (max-width : 767px) {
+	.title {
+		margin: 3rem 0 1.75rem;
+
+		h2 {
+			font-size: 1.75rem;
+		}
+	}
+}
+
+@media screen and (max-width : 575px) {
+	.title {
+		margin: 2rem 0 1.5rem;
+
+		h2 {
+			font-size: 1.5rem;
+		}
+	}
+}
+
+@media screen and (max-width : 380px) {
+	.title {
+		margin: 1.75rem 0 1.25rem;
+
+		h2 {
+			font-size: 1.25rem;
+		}
+	}
+}

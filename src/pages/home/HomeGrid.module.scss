@@ -1,0 +1,58 @@
+@use '../../abstracts/scss/' as *;
+
+.homeGridTitle {
+	position: relative;
+	opacity: 0;
+}
+
+.homeGridTitleAnimation {
+	animation: home-grid-title-animation 1.5s forwards;
+}
+
+@keyframes home-grid-title-animation {
+	from {
+		opacity: 0;
+		bottom: -1.5em;
+	}
+
+	to {
+		opacity: 1;
+		bottom: 0;
+	}
+}
+
+.homeGridContainer {
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 1.5rem;
+	aspect-ratio: 1/1;
+	grid-template-areas:
+		"area1 area2 area3"
+		"area1 area4 area5"
+		"area6 area7 area7"
+	;
+}
+
+
+@media screen and (max-width : 1023px) {
+	.homeGridContainer {
+		gap: 1.25rem;
+	}
+}
+
+@media screen and (max-width : 767px) {
+	.homeGridContainer {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		gap: 1rem;
+		aspect-ratio: initial;
+		grid-template-areas:
+			"area1 area2"
+			"area3 area4"
+			"area5 area6"
+			"area7 area7"
+		;
+	}
+}

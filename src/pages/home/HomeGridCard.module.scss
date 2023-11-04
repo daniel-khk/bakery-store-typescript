@@ -1,0 +1,116 @@
+@use '../../abstracts/scss/' as *;
+
+.homeGridCardContainer {
+	position: relative;
+	background-color: $color-image-background;
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+	opacity: 0;
+
+	img {
+		object-fit: cover;
+		height: 100%;
+		width: 100%;
+		transition: 0.4s ease;
+
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+
+.homeGridAnimation {
+	animation: home-grid-animation 1.5s forwards;
+}
+
+@keyframes home-grid-animation {
+	from {
+		opacity: 0;
+		bottom: -1.5em;
+	}
+
+	to {
+		opacity: 1;
+		bottom: 0;
+	}
+}
+
+.textBox {
+	width: 100%;
+	height: 3.25rem;
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	background-color: rgba(0, 0, 0, 0.3);
+	z-index: 10;
+}
+
+.text {
+	font-family: $font-jost;
+	color: $color-text-contrast;
+	font-size: $font-size-l;
+	font-weight: 600;
+	padding: 0 1rem;
+	text-transform: capitalize;
+}
+
+.gridItem10 {
+	grid-area: area1;
+}
+
+.gridItem8 {
+	grid-area: area2;
+}
+
+.gridItem15 {
+	grid-area: area3;
+}
+
+.gridItem13 {
+	grid-area: area4;
+}
+
+.gridItem1 {
+	grid-area: area5;
+}
+
+.gridItem14 {
+	grid-area: area6;
+}
+
+.gridItem11 {
+	grid-area: area7;
+}
+
+
+@media screen and (max-width : 1023px) {
+	.textBox {
+		height: 3rem;
+	}
+
+	.text {
+		font-size: $font-size-m;
+		padding: 0 0.75rem;
+	}
+}
+
+@media screen and (max-width : 767px) {
+	.homeGridCardContainer {
+		aspect-ratio: 1/1;
+	}
+
+	.gridItem11 {
+		aspect-ratio: 2/1;
+	}
+}
+
+@media screen and (max-width : 575px) {
+	.text {
+		font-size: $font-size-s;
+		padding: 0 0.5rem;
+		line-height: 1.2em;
+	}
+}

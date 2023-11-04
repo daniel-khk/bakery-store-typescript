@@ -1,0 +1,85 @@
+@use '../../abstracts/scss/' as *;
+
+.formContainer {
+	width: 31.25rem;
+	min-width: calc(320px - ($side-padding-s * 2));
+}
+
+.formGroup {
+	margin-bottom: 0.5rem;
+}
+
+.formLabel {
+	font-size: $font-size-m;
+	margin-bottom: 0.25em;
+}
+
+.formControl {
+	font-size: $font-size-s;
+	border-radius: 0.25rem;
+	background-color: #f9fafb;
+	border-color: #d1d5db;
+
+	&::placeholder {
+		color: $color-light-grey;
+	}
+}
+
+.formText {
+	font-size: $font-size-xs;
+	color: $color-alert;
+	margin-left: 0.1rem;
+}
+
+.submitButton {
+	input[type=submit] {
+		background-color: $color-primary;
+		border: none;
+		border-radius: 0.5rem;
+		color: white;
+		font-family: $font-pop;
+		font-weight: 600;
+		padding: 1em 2em;
+		text-decoration: none;
+		cursor: pointer;
+		float: right;
+		transition: 0.4s ease;
+
+		&:hover {
+			background-color: $color-primary-shade;
+		}
+	}
+}
+
+
+@media screen and (max-width : 575px) {
+	.formContainer {
+		width: calc(100vw - ($side-padding-s * 2));
+	}
+
+	.formLabel {
+		font-size: $font-size-s;
+	}
+
+	.submitButton {
+		input[type=submit] {
+			font-size: $font-size-s;
+		}
+	}
+}
+
+@media screen and (max-width : 380px) {
+	.formLabel {
+		font-size: $font-size-s-1;
+	}
+
+	.formControl {
+		font-size: $font-size-s-1;
+	}
+
+	.submitButton {
+		input[type=submit] {
+			font-size: $font-size-s-1;
+		}
+	}
+}

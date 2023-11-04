@@ -1,0 +1,20 @@
+ @use '../../abstracts/scss/' as *;
+
+ .navbarContainer {
+ 	width: 100%;
+ 	background-color: $color-primary;
+ 	height: $navbar-height-web;
+ 	z-index: 90;
+ }
+
+ @media screen and (max-width : 1023px) {
+ 	.navbarContainer {
+ 		height: $navbar-height-mobile;
+ 	}
+ }
+
+ @media screen and (max-width : 1023px) {
+ 	.navbarContainer {
+ 		height: $navbar-height-mobile-s;
+ 	}
+ }

@@ -1,0 +1,87 @@
+@use '../../abstracts/scss/' as *;
+
+.contactContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 3rem;
+	width: 100%;
+}
+
+.contactInfo {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+	gap: 1.25em;
+	position: relative;
+	opacity: 0;
+
+	p {
+		line-height: 1.6em;
+	}
+}
+
+.textOpenHours {
+	span {
+		color: $color-alert;
+	}
+}
+
+.contactInfoAnimation {
+	animation: contact-info-animation 1.5s forwards;
+}
+
+@keyframes contact-info-animation {
+	from {
+		opacity: 0;
+		bottom: -1.5em;
+	}
+
+	to {
+		opacity: 1;
+		bottom: 0;
+	}
+}
+
+.contactForm {
+	position: relative;
+	opacity: 0;
+}
+
+.contactFormAnimation {
+	animation: contact-form-animation 2s forwards;
+}
+
+@keyframes contact-form-animation {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+
+@media screen and (max-width : 575px) {
+	.contactContainer {
+		gap: 2.5rem;
+	}
+
+	.contactInfo {
+		font-size: $font-size-s;
+	}
+}
+
+@media screen and (max-width : 380px) {
+	.contactContainer {
+		gap: 2rem;
+	}
+
+	.contactInfo {
+		font-size: $font-size-s-1;
+	}
+}

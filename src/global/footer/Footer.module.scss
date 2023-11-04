@@ -1,0 +1,59 @@
+@use '../../abstracts/scss/' as *;
+
+footer {
+	background-color: $color-bg-tint;
+	width: 100%;
+	margin-top: 7rem;
+}
+
+.footerMenu {
+	margin: 0 auto;
+	max-width: $max-width-main;
+	padding: 0 $side-padding-m;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	text-align: right;
+
+	p {
+		font-family: $font-pop;
+		font-size: $font-size-s;
+		color: $color-primary;
+		line-height: 1.6em;
+		padding: 1.5em 0;
+	}
+}
+
+@media screen and (max-width : 767px) {
+	footer {
+		margin-top: 5rem;
+	}
+
+	.footerMenu {
+		padding: 0 $side-padding-s;
+
+		p {
+			font-size: $font-size-s-1;
+		}
+	}
+}
+
+@media screen and (max-width : 575px) {
+	footer {
+		margin-top: 4rem;
+	}
+
+	.footerMenu {
+		p {
+			font-size: $font-size-xs;
+		}
+	}
+}
+
+@media screen and (max-width : 380px) {
+	footer {
+		margin-top: 3rem;
+	}
+}
