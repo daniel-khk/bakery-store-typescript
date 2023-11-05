@@ -1,0 +1,161 @@
+@use '../../abstracts/scss/' as *;
+
+
+.itemPopup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	min-width: $min-width-main;
+	display: flex;
+}
+
+.popupBackground {
+	background-color: rgba($color: #000000, $alpha: 0.5);
+	z-index: 101;
+}
+
+.itemPopupContent {
+	background-color: $color-bg;
+	width: 92.5%;
+	height: 92.5%;
+	padding: 1.5rem 0 1.5rem 1.5rem;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	border-radius: 1rem;
+	gap: 1.5rem;
+	overflow: hidden;
+	position: relative;
+	z-index: 102;
+}
+
+.imageBox {
+	overflow: hidden;
+	height: 100%;
+	width: 65%;
+
+	img {
+		height: 100%;
+		width: 100%;
+		border-radius: 0.5rem;
+		object-fit: cover;
+	}
+}
+
+.textBox {
+	height: 100%;
+	width: 35%;
+	font-size: $font-size-s;
+	padding: 1rem 1.5rem 0 0;
+	overflow-y: auto;
+
+	h3 {
+		font-weight: 600;
+	}
+
+	p,
+	span,
+	li {
+		line-height: 1.6em;
+	}
+
+	li {
+		list-style-type: disc;
+		list-style-position: outside;
+		margin-left: 1em;
+	}
+
+}
+
+.textDescription {
+	margin-bottom: 1.75em;
+	border-bottom: 1px solid $color-light-grey;
+}
+
+.textContent {
+	padding: 0.5em 0 1.75em 1em;
+}
+
+.noBorder {
+	border-bottom: none;
+}
+
+.closeButton {
+	position: absolute;
+	top: 1.5rem;
+	right: 1.5rem;
+	color: $color-text-contrast;
+	padding: 0.25rem;
+	background-color: rgba($color: #000000, $alpha: 0.3);
+	border-radius: 9999px;
+	transition: 0.4s ease;
+	cursor: pointer;
+
+	&:hover {
+		background-color: rgba($color: #000000, $alpha: 0.5);
+	}
+}
+
+
+@media screen and (max-width : 1023px) {
+	.itemPopupContent {
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		overflow-y: auto;
+		padding: 1.5rem;
+	}
+
+	.imageBox {
+		width: 100%;
+		height: initial;
+		overflow: initial;
+	}
+
+	.textBox {
+		width: 100%;
+		height: initial;
+		padding: 0 0.25rem;
+		overflow: initial;
+	}
+
+	.textDescription {
+		margin-bottom: 1.5em;
+	}
+
+	.textContent {
+		padding: 0.5em 0 1.5em 1em;
+	}
+
+	.closeButton {
+		top: 2rem;
+		right: 2rem;
+		background-color: rgba($color: #000000, $alpha: 0.4);
+
+		&:hover {
+			background-color: rgba($color: #000000, $alpha: 0.25);
+
+		}
+	}
+}
+
+@media screen and (max-width : 767px) {
+	.itemPopupContent {
+		padding: 1rem;
+	}
+
+	.closeButton {
+		top: 1.5rem;
+		right: 1.5rem;
+	}
+}
+
+@media screen and (max-width : 575px) {
+	.textBox {
+		font-size: $font-size-s-1;
+	}
+}

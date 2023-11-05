@@ -66,9 +66,21 @@
 }
 
 
-@media screen and (max-width : 575px) {
+@media screen and (max-width : 1023px) {
 	.contactContainer {
 		gap: 2.5rem;
+	}
+}
+
+@media screen and (max-width : 767px) {
+	.contactContainer {
+		gap: 2.25rem;
+	}
+}
+
+@media screen and (max-width : 575px) {
+	.contactContainer {
+		gap: 2rem;
 	}
 
 	.contactInfo {
@@ -78,7 +90,7 @@
 
 @media screen and (max-width : 380px) {
 	.contactContainer {
-		gap: 2rem;
+		gap: 1.75rem;
 	}
 
 	.contactInfo {
