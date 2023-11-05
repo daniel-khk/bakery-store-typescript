@@ -18,7 +18,7 @@
 }
 
 .headerAnimation {
-	animation: header-animation 2s forwards;
+	animation: header-animation 2.5s forwards;
 }
 
 @keyframes header-animation {
@@ -52,7 +52,7 @@
 }
 
 .textListAnimation {
-	animation: text-list-animation 1.5s ease 0.5s forwards;
+	animation: text-list-animation 2s ease 1s forwards;
 }
 
 @keyframes text-list-animation {

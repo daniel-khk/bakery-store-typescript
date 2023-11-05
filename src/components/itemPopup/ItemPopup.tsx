@@ -17,7 +17,7 @@ const ItemPopup: React.FC<ItemPopupProps> = (props) => {
 		setTimeout(() => {
 			setIsClosing(false);
 			props.onHide();
-		}, 300); // Set the timeout duration to match the animation duration (0.3s)
+		}, 400); // Set the timeout duration to match the animation duration (0.4s)
 	};
 
 	const closeButton = () => {

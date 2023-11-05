@@ -13,7 +13,7 @@
 }
 
 .itemPopupAnimation {
-	animation: item-popup-animation 0.3s;
+	animation: item-popup-animation 0.4s;
 }
 
 @keyframes item-popup-animation {
@@ -29,7 +29,7 @@
 }
 
 .closePopupAnimation {
-	animation: close-popup-animation 0.3s;
+	animation: close-popup-animation 0.4s;
 }
 
 @keyframes close-popup-animation {
@@ -69,6 +69,7 @@
 	overflow: hidden;
 	height: 100%;
 	width: 65%;
+	background-color: $color-image-background;
 
 	img {
 		height: 100%;
@@ -84,6 +85,7 @@
 	font-size: $font-size-s;
 	padding: 1rem 1.5rem 0 0;
 	overflow-y: auto;
+	scroll-behavior: smooth;
 
 	h3 {
 		font-weight: 600;
@@ -149,6 +151,7 @@
 		align-items: center;
 		border-radius: 0;
 		overflow-y: auto;
+		scroll-behavior: smooth;
 	}
 
 	.imageBox {
