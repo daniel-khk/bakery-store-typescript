@@ -198,24 +198,20 @@
 	@keyframes item-popup-animation {
 		from {
 			bottom: -100vh;
-			opacity: 0;
 		}
 
 		to {
 			bottom: 0;
-			opacity: 1;
 		}
 	}
 
 	@keyframes close-popup-animation {
 		from {
 			bottom: 0;
-			opacity: 1;
 		}
 
 		to {
 			bottom: -100vh;
-			opacity: 0;
 		}
 	}
 }
@@ -226,8 +222,8 @@
 	}
 
 	.closeButton {
-		top: 1.75rem;
-		right: 1.75rem;
+		top: 1.5rem;
+		right: 1.5rem;
 	}
 }
 
@@ -237,7 +233,7 @@
 	}
 
 	.closeButton {
-		top: 1.5rem;
-		right: 1.5rem;
+		top: 1.25rem;
+		right: 1.25rem;
 	}
 }
