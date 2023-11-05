@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './ItemPopup.module.scss';
-import Modal from 'react-bootstrap/Modal';
+
 
 interface ItemPopupProps {
 	item: KetoItemType;
@@ -10,13 +10,34 @@ interface ItemPopupProps {
 
 const ItemPopup: React.FC<ItemPopupProps> = (props) => {
 	const { productInfo = [], ingredients = [], careInstruction = '' } = props.item;
+	const [isClosing, setIsClosing] = useState(false);
+
+	const handleClose = () => {
+		setIsClosing(true);
+		setTimeout(() => {
+			setIsClosing(false);
+			props.onHide();
+		}, 300); // Set the timeout duration to match the animation duration (0.3s)
+	};
+
+	const closeButton = () => {
+		return (
+			<button className={`${styles.closeButton}`} onClick={handleClose}>
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-7 h-7">
+					<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			</button>
+		)
+	}
 
 	return (
-		<section className={styles.itemPopup}>
+		<section className={`${styles.itemPopup} ${styles.itemPopupAnimation} ${isClosing ? styles.closePopupAnimation : ''}`}>
 			<div className={styles.itemPopupContent}>
+				{/* Item image */}
 				<div className={styles.imageBox}>
 					<img src={props.item.img} alt="Item Image" loading="lazy" />
 				</div>
+				{/* Item information */}
 				<div className={styles.textBox}>
 					<div className={styles.textDescription}>
 						<h3>Product Information</h3>
@@ -48,12 +69,12 @@ const ItemPopup: React.FC<ItemPopupProps> = (props) => {
 						</div>
 					</div>
 				</div>
-				<button className={styles.closeButton} onClick={props.onHide}>
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-7 h-7">
-						<path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-					</svg>
-				</button>
+				{/* Close button for web view */}
+				<div className={styles.webActive}>{closeButton()}</div>
 			</div>
+			{/* Close button for mobile view */}
+			<div className={styles.mobileActive}>{closeButton()}</div>
+			{/* Background dark shade */}
 			<div className={`${styles.popupBackground} ${styles.itemPopup}`} onClick={props.onHide}></div>
 		</section>
 	)

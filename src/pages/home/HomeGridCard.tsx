@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styles from './HomeGridCard.module.scss';
 import useScrollAnimation from '../../hooks/useScrollAnimation';
 import ItemPopup from '../../components/itemPopup/ItemPopup';
@@ -15,7 +15,14 @@ const HomeGridCard: React.FC<HomeGridCardProps> = ({ item }) => {
 
 	const bestItemCardClick = () => {
 		setIsBestItemPopup(true);
+		document.body.style.overflow = "hidden";
 	}
+
+	useEffect(() => {
+		if (isBestItemPopup === false) {
+			document.body.style.overflow = "unset";
+		}
+	}, [isBestItemPopup])
 
 	return (
 		<>

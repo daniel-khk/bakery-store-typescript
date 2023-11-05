@@ -3,13 +3,45 @@
 
 .itemPopup {
 	position: fixed;
-	top: 0;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
 	z-index: 100;
 	min-width: $min-width-main;
 	display: flex;
+}
+
+.itemPopupAnimation {
+	animation: item-popup-animation 0.3s;
+}
+
+@keyframes item-popup-animation {
+	from {
+		bottom: -20vh;
+		opacity: 0;
+	}
+
+	to {
+		bottom: 0;
+		opacity: 1;
+	}
+}
+
+.closePopupAnimation {
+	animation: close-popup-animation 0.3s;
+}
+
+@keyframes close-popup-animation {
+	from {
+		bottom: 0;
+		opacity: 1;
+	}
+
+	to {
+		bottom: -20vh;
+		opacity: 0;
+	}
 }
 
 .popupBackground {
@@ -90,30 +122,43 @@
 	right: 1.5rem;
 	color: $color-text-contrast;
 	padding: 0.25rem;
-	background-color: rgba($color: #000000, $alpha: 0.3);
+	background-color: rgba($color: #222222, $alpha: 1);
 	border-radius: 9999px;
 	transition: 0.4s ease;
 	cursor: pointer;
+	z-index: 103;
 
 	&:hover {
-		background-color: rgba($color: #000000, $alpha: 0.5);
+		background-color: rgba($color: #222222, $alpha: 0.5);
 	}
 }
 
+@media screen and (min-width : 1024px) {
+	.mobileActive {
+		display: none;
+	}
+}
 
 @media screen and (max-width : 1023px) {
 	.itemPopupContent {
+		width: 100%;
+		height: 100%;
+		padding: 0;
 		flex-direction: column;
-		align-items: center;
 		justify-content: flex-start;
+		align-items: center;
+		border-radius: 0;
 		overflow-y: auto;
-		padding: 1.5rem;
 	}
 
 	.imageBox {
 		width: 100%;
 		height: initial;
 		overflow: initial;
+
+		img {
+			border-radius: 0;
+		}
 	}
 
 	.textBox {
@@ -121,6 +166,7 @@
 		height: initial;
 		padding: 0 0.25rem;
 		overflow: initial;
+		padding: 0 $side-padding-m;
 	}
 
 	.textDescription {
@@ -131,31 +177,67 @@
 		padding: 0.5em 0 1.5em 1em;
 	}
 
+	.webActive {
+		display: none;
+	}
+
+	.mobileActive {
+		display: initial;
+	}
+
 	.closeButton {
 		top: 2rem;
 		right: 2rem;
-		background-color: rgba($color: #000000, $alpha: 0.4);
+		background-color: rgba($color: #222222, $alpha: 1);
 
 		&:hover {
-			background-color: rgba($color: #000000, $alpha: 0.25);
+			background-color: rgba($color: #222222, $alpha: 1);
+		}
+	}
 
+	@keyframes item-popup-animation {
+		from {
+			bottom: -100vh;
+			opacity: 0;
+		}
+
+		to {
+			bottom: 0;
+			opacity: 1;
+		}
+	}
+
+	@keyframes close-popup-animation {
+		from {
+			bottom: 0;
+			opacity: 1;
+		}
+
+		to {
+			bottom: -100vh;
+			opacity: 0;
 		}
 	}
 }
 
 @media screen and (max-width : 767px) {
-	.itemPopupContent {
-		padding: 1rem;
+	.textBox {
+		padding: 0 $side-padding-s;
 	}
 
 	.closeButton {
-		top: 1.5rem;
-		right: 1.5rem;
+		top: 1.75rem;
+		right: 1.75rem;
 	}
 }
 
 @media screen and (max-width : 575px) {
 	.textBox {
 		font-size: $font-size-s-1;
+	}
+
+	.closeButton {
+		top: 1.5rem;
+		right: 1.5rem;
 	}
 }
